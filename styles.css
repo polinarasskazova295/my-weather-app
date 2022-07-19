@@ -3,7 +3,7 @@ body {
 }
 
 .allBody {
-  background: black;
+  background: rgb(0, 0, 0);
   font-family: cursive;
   width: 1200px;
   height: 650px;
@@ -11,12 +11,12 @@ body {
   margin-right: auto;
   margin-top: 50px;
   border-radius: 6px;
-  opacity: 0.7;
-  filter: brightness(110%);
+  opacity: 0.8;
+  filter: brightness(200%);
 }
 
 h1 {
-  color: white;
+  color: orangered);
   text-align: center;
   font-size: 45px;
   font-weight: bold;
@@ -70,8 +70,7 @@ h4 {
 #input-one {
   background: white;
   opacity: 0.7;
-  filter: brightness(110%)
-  ;
+  filter: brightness(110%);
 }
 #input-two {
   color: black;
@@ -96,7 +95,13 @@ button {
 .tempMain {
   color: orangered;
   text-decoration: none;
-  }
+}
 .cf {
   line-height: 0.1;
+}
+#end-link {
+  color: orangered;
+}
+.end {
+  color: white;
 }
