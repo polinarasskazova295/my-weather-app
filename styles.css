@@ -1,0 +1,102 @@
+body {
+  background-image: url(images/8.jpg);
+}
+
+.allBody {
+  background: black;
+  font-family: cursive;
+  width: 1200px;
+  height: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border-radius: 6px;
+  opacity: 0.7;
+  filter: brightness(110%);
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+}
+h2 {
+  text-align: center;
+  color: orangered;
+  font-size: 50px;
+  font-weight: bold;
+}
+h3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+}
+h4 {
+  text-align: center;
+  position: relative;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+}
+.humid {
+  text-align: right;
+  position: relative;
+  right: 450px;
+  font-weight: bold;
+  font-size: 25px;
+}
+.col {
+  font-weight: bold;
+  font-size: 35px;
+  text-align: center;
+}
+.red {
+  color: orangered;
+}
+.emoji {
+  font-size: 60px;
+}
+.search {
+  text-align: center;
+  color: orangered;
+  padding: 30px 30px;
+  font-size: 40px;
+}
+.city {
+  text-decoration: underline;
+}
+#input-one {
+  background: white;
+  opacity: 0.7;
+  filter: brightness(110%)
+  );
+}
+#input-two {
+  color: black;
+  background: orangered;
+  border-radius: 10px;
+}
+button {
+  color: black;
+  background: orangered;
+  border-radius: 10px;
+}
+.celsium {
+  color: orangered;
+  font-size: 20px;
+  text-decoration: none;
+}
+.fahrenheit {
+  color: orangered;
+  font-size: 20px;
+  text-decoration: none;
+}
+.tempMain {
+  color: orangered;
+  text-decoration: none;
+  }
+.cf {
+  line-height: 0.1;
+}
