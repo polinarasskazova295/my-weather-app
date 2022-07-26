@@ -3,7 +3,7 @@ body {
 }
 
 .allBody {
-  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.066);
   font-family: cursive;
   width: 1200px;
   height: 650px;
@@ -11,15 +11,19 @@ body {
   margin-right: auto;
   margin-top: 50px;
   border-radius: 6px;
-  opacity: 0.8;
-  filter: brightness(200%);
+  opacity: 0.9;
+  color: white;
+ 
+ 
 }
 
 h1 {
-  color: orangered);
+  color: orangered;
   text-align: center;
   font-size: 45px;
   font-weight: bold;
+   text-decoration: underline;
+   
 }
 h2 {
   text-align: center;
