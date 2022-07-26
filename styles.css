@@ -50,7 +50,7 @@ h4 {
 }
 .col {
   font-weight: bold;
-  font-size: 35px;
+  font-size: 30px;
   text-align: center;
 }
 .red {
@@ -117,4 +117,7 @@ h1:first-letter {
   font-size: 55px;
   padding: 0px 557px;
   display: block;
+}
+.weatherTempMin {
+  color: rgb(244, 140, 103)
 }
