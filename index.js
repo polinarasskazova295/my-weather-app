@@ -20,7 +20,7 @@ let month = now.getMonth();
 month = Math.round(1 + month);
 if (month < 10) {
   month = "0" + month;
-  }
+}
 let year = now.getFullYear();
 
 let hours = now.getHours();
@@ -45,46 +45,23 @@ h4.innerHTML =
   ":" +
   minutes;
 
-function searchForm(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#input-one");
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = searchInput.value;
-}
-let form = document.querySelector(".search-form");
-form.addEventListener("submit", searchForm);
-
-function changeTempF(event) {
-  event.preventDefault();
-  let tempC = document.querySelector(".tempMain");
-
-  let tempF = Math.round((tempC * 9) / 5 + 32);
-  tempC.innerHTML = tempF;
-}
-function changeTempC(event) {
-  event.preventDefault();
-  let tempC = document.querySelector(".tempMain");
-
-  tempC.innerHTML = tempC;
-}
-
-let tempF = document.querySelector(".fahrenheit");
-tempF.addEventListener("click", changeTempF);
-let tempC = document.querySelector(".celsium");
-tempC.addEventListener("click", changeTempC);
-
 //
 
 function showTemperature(response) {
   console.log(response.data);
   let city = document.querySelector("h1");
   city.innerHTML = response.data.name;
+
+  let tempC = response.data.main.temp;
   let tempMain = document.querySelector(".tempMain");
-  tempMain.innerHTML = Math.round(response.data.main.temp);
+  tempMain.innerHTML = Math.round(tempC);
+
   let humidOne = document.querySelector(".humidOne");
   humidOne.innerHTML = response.data.main.humidity;
+
   let windOne = document.querySelector(".windOne");
   windOne.innerHTML = Math.round(response.data.wind.speed);
+
   let descriptionOne = document.querySelector("#clear");
   descriptionOne.innerHTML = response.data.weather[0].description;
 }
@@ -101,7 +78,7 @@ function handleSubmit(event) {
 }
 let formSearch = document.querySelector(".search-form");
 formSearch.addEventListener("submit", handleSubmit);
-search("Kharkiv");
+
 //
 function getCurrentPosition(event) {
   event.preventDefault();
@@ -120,3 +97,29 @@ function currentPosition(position) {
 
   axios.get(`${url}&appid=${apiKey}`).then(showTemperature);
 }
+
+//
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(".tempMain");
+  let tempF = (tempC * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(tempF);
+  celsium.classList.remove("active");
+  fahrenheit.classList.add("active");
+}
+function displayCelsiumTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(".tempMain");
+  temperatureElement.innerHTML = Math.round(tempC);
+  celsium.classList.add("active");
+  fahrenheit.classList.remove("active");
+}
+
+let tempC = null;
+
+let fahrenheit = document.querySelector(".fahrenheit");
+fahrenheit.addEventListener("click", displayFahrenheitTemperature);
+
+let celsium = document.querySelector(".celsium");
+celsium.addEventListener("click", displayCelsiumTemperature);
