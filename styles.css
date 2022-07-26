@@ -109,3 +109,6 @@ button {
 .end {
   color: white;
 }
+#clear:first-letter {
+text-transform: capitalize;
+}
