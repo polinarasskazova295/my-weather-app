@@ -64,7 +64,15 @@ function showTemperature(response) {
 
   let descriptionOne = document.querySelector("#clear");
   descriptionOne.innerHTML = response.data.weather[0].description;
+
+let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
 
 function search(city) {
   let apiKey = `99da04848d12f6363764ab7d54adc040`;
@@ -121,4 +129,4 @@ fahrenheit.addEventListener("click", displayFahrenheitTemperature);
 let celsium = document.querySelector(".celsium");
 celsium.addEventListener("click", displayCelsiumTemperature);
 
-search("Kharkiv")
+search("Kharkiv");

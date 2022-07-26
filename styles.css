@@ -115,5 +115,6 @@ h1:first-letter {
 #icon {
   text-align: center;
   font-size: 55px;
-  padding: 10px 570px;
+  padding: 0px 557px;
+  display: block;
 }
