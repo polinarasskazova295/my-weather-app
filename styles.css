@@ -13,8 +13,6 @@ body {
   border-radius: 6px;
   opacity: 0.9;
   color: white;
- 
- 
 }
 
 h1 {
@@ -22,8 +20,7 @@ h1 {
   text-align: center;
   font-size: 45px;
   font-weight: bold;
-   text-decoration: underline;
-   
+  text-decoration: underline;
 }
 h2 {
   text-align: center;
@@ -110,13 +107,13 @@ button {
   color: white;
 }
 #clear:first-letter {
-text-transform: capitalize;
+  text-transform: capitalize;
 }
 h1:first-letter {
-text-transform: capitalize;
+  text-transform: capitalize;
 }
-.icon {
+#icon {
   text-align: center;
-   font-size: 55px;
-   display: block;
+  font-size: 55px;
+  padding: 10px 570px;
 }
