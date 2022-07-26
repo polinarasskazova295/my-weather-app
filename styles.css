@@ -112,3 +112,6 @@ button {
 #clear:first-letter {
 text-transform: capitalize;
 }
+h1:first-letter {
+text-transform: capitalize;
+}
