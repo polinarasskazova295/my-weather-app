@@ -14,15 +14,23 @@ let day = days[now.getDay()];
 
 let date = now.getDate();
 if (date < 10) {
-  date = "0" + hours;
+  date = "0" + date;
 }
 let month = now.getMonth();
+month = Math.round(1 + month);
 if (month < 10) {
   month = "0" + month;
-}
+  }
 let year = now.getFullYear();
+
 let hours = now.getHours();
+if (hours < 10) {
+  hours = "0" + hours;
+}
 let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = "0" + minutes;
+}
 
 h4.innerHTML =
   day +
@@ -49,15 +57,15 @@ form.addEventListener("submit", searchForm);
 function changeTempF(event) {
   event.preventDefault();
   let tempC = document.querySelector(".tempMain");
-  let temp = 25;
-  let tempF = Math.round((temp * 9) / 5 + 32);
+
+  let tempF = Math.round((tempC * 9) / 5 + 32);
   tempC.innerHTML = tempF;
 }
 function changeTempC(event) {
   event.preventDefault();
   let tempC = document.querySelector(".tempMain");
-  let temp = 25;
-  tempC.innerHTML = temp;
+
+  tempC.innerHTML = tempC;
 }
 
 let tempF = document.querySelector(".fahrenheit");
@@ -68,6 +76,7 @@ tempC.addEventListener("click", changeTempC);
 //
 
 function showTemperature(response) {
+  console.log(response.data);
   let city = document.querySelector("h1");
   city.innerHTML = response.data.name;
   let tempMain = document.querySelector(".tempMain");
