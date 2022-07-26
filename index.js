@@ -52,7 +52,7 @@ function showTemperature(response) {
   let city = document.querySelector("h1");
   city.innerHTML = response.data.name;
 
-  let tempC = response.data.main.temp;
+  tempC = response.data.main.temp;
   let tempMain = document.querySelector(".tempMain");
   tempMain.innerHTML = Math.round(tempC);
 
@@ -76,8 +76,6 @@ function handleSubmit(event) {
   let city = document.querySelector("#input-one").value;
   search(city);
 }
-let formSearch = document.querySelector(".search-form");
-formSearch.addEventListener("submit", handleSubmit);
 
 //
 function getCurrentPosition(event) {
@@ -105,21 +103,22 @@ function displayFahrenheitTemperature(event) {
   let temperatureElement = document.querySelector(".tempMain");
   let tempF = (tempC * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(tempF);
-  celsium.classList.remove("active");
-  fahrenheit.classList.add("active");
 }
 function displayCelsiumTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector(".tempMain");
   temperatureElement.innerHTML = Math.round(tempC);
-  celsium.classList.add("active");
-  fahrenheit.classList.remove("active");
 }
 
 let tempC = null;
+
+let formSearch = document.querySelector(".search-form");
+formSearch.addEventListener("submit", handleSubmit);
 
 let fahrenheit = document.querySelector(".fahrenheit");
 fahrenheit.addEventListener("click", displayFahrenheitTemperature);
 
 let celsium = document.querySelector(".celsium");
 celsium.addEventListener("click", displayCelsiumTemperature);
+
+search("Kharkiv")
