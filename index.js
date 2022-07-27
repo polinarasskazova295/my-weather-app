@@ -47,7 +47,8 @@ h4.innerHTML =
 
 //
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily)
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
@@ -71,6 +72,14 @@ function displayForecast() {
 
 forecastHTML = forecastHTML + `</div>`;
 forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates)
+  let apiKey = `99da04848d12f6363764ab7d54adc040`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&appid=metric`;
+console.log(apiUrl)
+axios.get(apiUrl).then(displayForecast)
 }
 
 function showTemperature(response) {
@@ -97,6 +106,8 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -156,4 +167,4 @@ celsium.addEventListener("click", displayCelsiumTemperature);
 
 search("Kharkiv");
 
-displayForecast();
+
