@@ -18,7 +18,7 @@ body {
 h1 {
   color: orangered;
   text-align: center;
-  font-size: 45px;
+  font-size: 55px;
   font-weight: bold;
   text-decoration: underline;
 }
@@ -40,6 +40,8 @@ h4 {
   font-weight: bold;
   font-size: 30px;
   color: white;
+  padding: 0 auto;
+  line-height: 1;
 }
 .humid {
   text-align: right;
@@ -72,16 +74,15 @@ h4 {
   background: white;
   opacity: 0.7;
   filter: brightness(110%);
+
 }
 #input-two {
   color: black;
   background: orangered;
-  border-radius: 10px;
 }
 button {
   color: black;
   background: orangered;
-  border-radius: 10px;
 }
 .celsium {
   color: orangered;
@@ -114,10 +115,16 @@ h1:first-letter {
 }
 #icon {
   text-align: center;
-  font-size: 55px;
+  font-size: 40px;
   padding: 0px 557px;
   display: block;
 }
 .weatherTempMin {
   color: rgb(244, 140, 103)
+}
+.search-form {
+  text-align: center;
+}
+#weatherIcon {
+    font-size: 50px;
 }
