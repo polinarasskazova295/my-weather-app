@@ -47,6 +47,32 @@ h4.innerHTML =
 
 //
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function(day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+  <div class="weatherDay">${day}</div>
+  <div class="red">
+    <span class="weatherTempMax"> 23°C |</span>
+    <span class="weatherTempMin">18°C</span>
+  </div>
+  <img
+  src="https://openweathermap.org/img/wn/04d@2x.png"
+  alt=""
+  width="60"
+  class="emoji"
+  id="weatherIcon"/>
+    </div> `;
+  });
+
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   console.log(response.data);
   let city = document.querySelector("h1");
@@ -65,14 +91,13 @@ function showTemperature(response) {
   let descriptionOne = document.querySelector("#clear");
   descriptionOne.innerHTML = response.data.weather[0].description;
 
-let iconElement = document.querySelector("#icon");
+  let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-
 
 function search(city) {
   let apiKey = `99da04848d12f6363764ab7d54adc040`;
@@ -130,3 +155,5 @@ let celsium = document.querySelector(".celsium");
 celsium.addEventListener("click", displayCelsiumTemperature);
 
 search("Kharkiv");
+
+displayForecast();
